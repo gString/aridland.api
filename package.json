@@ -1,0 +1,46 @@
+{
+  "name": "aridland.api",
+  "version": "0.0.1",
+  "description": "rest api - aridland",
+  "main": "dist",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -w src --exec \"babel-node src --presets @babel/preset-env\"",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "//node_modules/"
+    ]
+  },
+  "author": "Gush Goldstein <gush.goldstein@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.6.0",
+    "body-parser": "^1.19.0",
+    "celebrate": "^10.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "joi-objectid": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.7",
+    "mongoose-id-validator": "^0.5.3",
+    "mongoose-unique-validator": "^2.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.5.5",
+    "faker": "^4.1.0",
+    "jest": "^24.9.0",
+    "mocha": "^6.2.0",
+    "mongodb-memory-server": "^5.2.5",
+    "nock": "^11.3.5",
+    "nodemon": "^1.19.1",
+    "rewire": "^4.0.1",
+    "should": "^13.2.3"
+  }
+}
