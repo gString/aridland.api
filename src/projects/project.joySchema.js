@@ -1,6 +1,6 @@
 // import Joi from 'joi';
 import { celebrate, Joi, errors } from "celebrate";
-import { textJoiSchema } from "../TextMaker";
+import { textJoiSchema } from "../models/TextMaker";
 import joiObjectId from "joi-objectid";
 
 Joi.objectId = joiObjectId(Joi);

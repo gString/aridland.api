@@ -1,53 +1,53 @@
 import constants from '../constants';
-import countryService from "../services/country.service";
+import projectService from "./project.service";
 import { deleteRequest, getRequest, simpleWriteRequest, updateRequest } from '../utils';
 
-const itemType = constants.itemType.COUNTRY;
+const itemType = constants.itemType.PROJECT;
 
-const countryCtrl = {
+const projectCtrl = {
 	
-	createCountry: async (request, result, next) => {
+	createProject:    async (request, result, next) => {
 		const responseObj = await simpleWriteRequest(
 			request.body,
-			countryService.createCountry,
+			projectService.createProject,
 			itemType
 		);
-		console.log('countryCtrl (-createCountry) responseObj:',responseObj);
+		console.log('projectCtrl (-createProject) responseObj:',responseObj);
 		return result.status(responseObj.status).send(responseObj);
 	},
-	retrieveCountries: async (request, result, next) => {
+	retrieveProjects: async ( request, result, next) => {
 		const responseObj = await getRequest(
-			countryService.getCountries,
+			projectService.getProjects,
 			itemType
 		);
 		return result.status(responseObj.status).send(responseObj);
 	},
-	retrieveCountry: async (request, result, next) => {
+	retrieveProject:  async (request, result, next) => {
 		const responseObj = await getRequest(
-			countryService.getCountry,
+			projectService.getProject,
 			itemType,
-			request.params.countryId
+			request.params.projectId
 		);
 		return result.status(responseObj.status).send(responseObj);
 	},
-	updateCountry: async (request, result, next) => {
+	updateProject:    async (request, result, next) => {
 		const responseObj = await updateRequest(
 			request.body,
-			request.params.countryId,
-			countryService.updateCountry,
+			request.params.projectId,
+			projectService.updateProject,
 			itemType
 		);
 		return result.status(responseObj.status).send(responseObj);
 	},
-	deleteCountry: async (request, result, next) => {
+	deleteProject: async (request, result, next) => {
 		const responseObj = await deleteRequest(
-			countryService.deleteCountry,
+			projectService.deleteProject,
 			itemType,
-			request.params.countryId
+			request.params.projectId
 		);
 		return result.status(responseObj.status).send(responseObj);
 	},
 };
 
 
-export default countryCtrl;
+export default projectCtrl;

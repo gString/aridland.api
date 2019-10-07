@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import textObj from "../TextMaker";
+import textObj from "../models/TextMaker";
 
 const projectSchema = Schema({
 	name: textObj( require ),

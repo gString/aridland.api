@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 import { celebrate, Joi, errors } from "celebrate";
 
 import config from './config';
-import routes from './routes/routes';
+import routes from './routes';
 import db from './db';
 
 

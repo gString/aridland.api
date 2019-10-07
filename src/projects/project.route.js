@@ -1,8 +1,8 @@
 import express from 'express';
 
 import joiSchemaValidator from "../middleware/joiSchemaValidator";
-import { projectEntitySchema, projectIdPathParamsSchema} from "../models/joi/project.schema";
-import projectCtrl from "../controllers/project.ctrl";
+import { projectEntitySchema, projectIdPathParamsSchema} from "./project.joySchema";
+import projectCtrl from "./project.ctrl";
 import { validateMiddleware } from "../validation/validateMiddleware";
 
 const projectRoutes = express.Router();

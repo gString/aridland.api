@@ -96,6 +96,7 @@ export const updateRequest = async ( data, id, service, type) => {
 
 export const deleteRequest = async ( service, type, id) => {
 	try {
+		console.log('service',service);
 		const response = await service(id);
 		console.log('deleteRequest - response',response);
 		const suffix = suffixer(type, id);
@@ -133,7 +134,6 @@ const shouldStopRequest = (list, id) => {
 };
 
 export const doesEntryExist = async ( entry, key, model, id ) => {
-	console.log('id - doesEntryExist',id);
 	for ( let lang in entry ) {
 		const path = key+"."+lang;
 		console.log('path',path);

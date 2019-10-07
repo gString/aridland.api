@@ -4,21 +4,25 @@ import mock from "./__mocks__/mock-request";
 
 /* utils.deleteRequest */
 describe("Test utils.deleteRequest", () => {
-	describe("Upon receiving successnreply", () => {
+	describe("Upon receiving success reply", () => {
 		test("It should return status 200",
 			async () => {
+				const service = mock.resolveWith(constants.items.ITEM_DELETED_SUCCESSFULLY);
+				console.log('service',service);
 				const result = await deleteRequest(
-					mock.itemDeleted,
+					service,
 					"fakeType",
 					"fakeID"
 				);
+				console.log('result "It should return status 200"',result);
 				expect(result.status).toBe(200);
 			}
 		);
 		test("It should return message that includes the success msg",
 			async () => {
+				const service = mock.resolveWith(constants.items.ITEM_DELETED_SUCCESSFULLY);
 				const result = await deleteRequest(
-					mock.itemDeleted,
+					service,
 					"fakeType",
 					"fakeID"
 				);

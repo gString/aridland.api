@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import textObj from "../TextMaker";
+import textObj from "../models/TextMaker";
 
 const countrySchema = mongoose.Schema({
 	name: textObj( require )

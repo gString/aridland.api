@@ -1,8 +1,8 @@
 import express from 'express';
 
 import joiSchemaValidator from "../middleware/joiSchemaValidator";
-import { countryIdPathParamsSchema, countryEntitySchema } from "../models/joi/country.schema";
-import countryCtrl from "../controllers/country.ctrl";
+import { countryIdPathParamsSchema, countryEntitySchema } from "./country.joySchema";
+import countryCtrl from "./country.ctrl";
 
 const countryRoutes = express.Router();
 

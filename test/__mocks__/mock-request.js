@@ -7,6 +7,15 @@ const resolveIt = (status, result) => {
 		})
 	})
 };
+
+const resolved = (status, result) =>
+	(status, result) => {
+		return new Promise( resolve => {
+			process.nextTick( () => {
+				resolve({status, result})
+			})
+		})
+};
 const rejectIt = _status => {
 	const status = _status || "error";
 	return new Promise( (resolve, reject) => {
@@ -17,6 +26,13 @@ const rejectIt = _status => {
 };
 
 export default {
+	resolveWith:          ( status, result) => () => {
+		return new Promise( resolve => {
+			process.nextTick( () => {
+				resolve({status, result})
+			})
+		})
+	},
 	itemCreated:          () => resolveIt(constants.items.ITEM_CREATED_SUCCESSFULLY),
 	itemExist:            () => resolveIt(constants.items.ITEM_EXIST),
 	unrecognisedResponse: () => resolveIt("unrecognised status for sure"),

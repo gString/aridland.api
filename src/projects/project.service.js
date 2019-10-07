@@ -1,5 +1,5 @@
 import constants from '../constants';
-import Project from '../models/mongoose/project.model';
+import Project from './project.model';
 import db from "../db";
 import { doesEntryExist } from "../utils";
 

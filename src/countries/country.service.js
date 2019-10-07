@@ -1,5 +1,5 @@
 import constants from '../constants';
-import Country from '../models/mongoose/country.model';
+import Country from './country.model';
 import db from "../db";
 import { doesEntryExist } from "../utils";
 
